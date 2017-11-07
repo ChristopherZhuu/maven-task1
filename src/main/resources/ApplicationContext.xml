@@ -41,7 +41,7 @@
         <property name="basePackage" value="com.dao"></property>
     </bean>
   
-      <!-- 创建一个sqlSession对象 -->
+      <!-- 创建一个sqlSession对象  构造注入 -->
     <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
         <constructor-arg index="0" ref="sqlSessionFactory" />
     </bean>

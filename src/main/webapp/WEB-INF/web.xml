@@ -29,7 +29,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>springmvc</servlet-name>
-        <url-pattern>/</url-pattern>
+        <url-pattern>/</url-pattern>       <!-- url -->
     </servlet-mapping>
 
     <!--编码过滤器 -->

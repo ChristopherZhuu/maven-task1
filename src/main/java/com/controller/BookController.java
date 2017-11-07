@@ -33,4 +33,9 @@ public class BookController {
 		return "Book/index";
 		
 	}
+	
+	@RequestMapping("/Search")
+	public String SearchBook(Model model){
+		return "Book/SearchBook";
+	}
 }
