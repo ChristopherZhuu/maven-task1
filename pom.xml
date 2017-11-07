@@ -8,7 +8,7 @@
 	<name>maven_task1 Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 
-	<dependencies>     <!-- 依赖关系 -->
+	<dependencies>     <!-- 依赖关系 ~~~-->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
