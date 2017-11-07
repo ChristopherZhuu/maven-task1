@@ -19,5 +19,13 @@ public class BookImpl implements BookService{
 		
 		return bookDao.getAllBook();
 	}
+	@Override
+	public List<Book> selectInfoByName(String bookName) {
+		// TODO Auto-generated method stub
+		return bookDao.selectInfoByName(bookName);
+	}
+
+
+	
 	
 }

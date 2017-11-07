@@ -1,9 +1,9 @@
-package form;
+package com.form;
 
 import java.io.Serializable;
 
 
-public class bookSearchForm implements Serializable{
+public class BookSearchForm implements Serializable{
 
 	/**
 	 * 

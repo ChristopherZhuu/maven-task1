@@ -6,4 +6,5 @@ import com.entity.Book;
 
 public interface BookDao {
 	public List<Book> getAllBook(); 
+	public List<Book> selectInfoByName(String bookNameString); 
 }

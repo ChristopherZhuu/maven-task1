@@ -7,5 +7,5 @@ import com.entity.Book;
 public interface BookService {
 	
 	public List<Book> getAllBook();
-	
+	public List<Book> selectInfoByName(String bookName); 
 }

@@ -12,7 +12,7 @@
 </head>
 <body>
 <div>
-	<form:form action="/maven_task1/Book/Search" method = "post" modelAttribute="bookSearchForm">
+	<form:form action="/maven_task1/Book/SearchResult" method = "post" modelAttribute="bookSearchForm">
 	<p>Please input the name of the book: <input type="text" name="bookName"/>
 	<input type="submit" value="Search" />
 	</form:form>
