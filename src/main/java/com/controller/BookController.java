@@ -66,6 +66,12 @@ public class BookController {
 		}
 	}
 
+	@RequestMapping("/test")
+	public String Testjsp(Model model){
+		return "Book/test";
+	}
+	
+	
 	@RequestMapping("/delete/{id}")
 	public String DeleteBook(@PathVariable("id") int id, BookSearchForm bookSearchForm, Model model) {
 		boolean status = bookService.deleteBookByPrimaryKey(id);
