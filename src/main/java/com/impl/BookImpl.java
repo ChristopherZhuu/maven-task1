@@ -24,6 +24,14 @@ public class BookImpl implements BookService{
 		// TODO Auto-generated method stub
 		return bookDao.selectInfoByName(bookName);
 	}
+	
+	public boolean deleteBookByPrimaryKey(int id) {
+		bookDao.deleteBookByPrimaryKey(id);
+		return true;
+	}
+	
+
+	
 
 
 	

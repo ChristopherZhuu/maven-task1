@@ -8,4 +8,6 @@ public interface BookService {
 	
 	public List<Book> getAllBook();
 	public List<Book> selectInfoByName(String bookName); 
+
+	public boolean deleteBookByPrimaryKey(int id);
 }

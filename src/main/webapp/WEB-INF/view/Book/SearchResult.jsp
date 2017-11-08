@@ -1,6 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
-<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -16,7 +18,8 @@ This is the result!
                 <th>编号</th>
                 <th>书名</th>   
                 <th>作者</th>
-                <th>价格</th>                          
+                <th>价格</th>     
+                <th>操作</th>                     
             </tr>
             <c:forEach var="result" items="${selectByNameResult}">
                 <tr>                  
@@ -24,9 +27,12 @@ This is the result!
                     <td>${result.bookName}</td>
                     <td>${result.author}</td> 
                     <td>${result.price}</td>                                    
+                	<td><a href="/maven_task1/Book/delete/${result.id}">delete</a></td>
                 </tr>
             </c:forEach>
         </table>    
     </div>
+   
+    <a href="../Book/Search">Return</a>
 </body>
 </html>
