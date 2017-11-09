@@ -15,4 +15,10 @@
 		delete from book
 		where id = #{id}
 	</delete>
+	<select id="selectInfoById" parameterType="int" resultType="Book">
+		select *
+		from book
+		where
+		id = #{id}
+	</select>
 </mapper>

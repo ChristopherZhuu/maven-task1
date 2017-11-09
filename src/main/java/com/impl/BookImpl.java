@@ -25,10 +25,21 @@ public class BookImpl implements BookService{
 		return bookDao.selectInfoByName(bookName);
 	}
 	
+	@Override
 	public boolean deleteBookByPrimaryKey(int id) {
 		bookDao.deleteBookByPrimaryKey(id);
 		return true;
 	}
+	
+	@Override
+	public List<Book> selectInfoById(int id){
+		
+		return bookDao.selectInfoById(id);
+	}
+
+	
+	
+
 	
 
 	

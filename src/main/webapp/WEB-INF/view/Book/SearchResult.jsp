@@ -27,7 +27,10 @@ This is the result!
                     <td>${result.bookName}</td>
                     <td>${result.author}</td> 
                     <td>${result.price}</td>                                    
-                	<td><a href="/maven_task1/Book/delete/${result.id}">delete</a></td>
+                	<td>
+                		<a href="/maven_task1/Book/delete/${result.id}">delete</a>
+                		<a href="/maven_task1/Book/modify/${result.id}">modify</a>
+                	</td>
                 </tr>
             </c:forEach>
         </table>    

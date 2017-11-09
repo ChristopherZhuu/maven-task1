@@ -42,6 +42,16 @@ public class BookController {
 
 	}
 
+	@RequestMapping("/modify/{id}")
+	public String ModifyBook(@PathVariable("id") int id, BookSearchForm bookSearchForm, Model model){
+		Book bookEntity = new Book();
+		List<Book> result = bookService.selectInfoById(id);
+		bookEntity = result.get(0);
+		BeanUtils.copyProperties(bookEntity, bookSearchForm);
+		//model.addAttribute("result", bookEntity);
+		return "Book/ModifyInput";
+	}
+	
 	@RequestMapping("/Search")
 	public String SearchBook(Model model, BookSearchForm bookSearchForm) {
 		
