@@ -21,4 +21,13 @@
 		where
 		id = #{id}
 	</select>
+	<update id="updateBook"
+		parameterType="com.entity.Book">
+		update book
+		set id = #{id},
+			bookName = #{bookName},
+			author = #{author},
+			price = #{price}
+		where id = #{id}
+	</update>
 </mapper>

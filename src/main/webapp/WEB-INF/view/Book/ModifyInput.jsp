@@ -13,7 +13,7 @@
 <body>
 <p>Input the details of the book:
 <div>
-		<form:form action="" method="post" modelAttribute="bookSearchForm">
+		<form:form action="/maven_task1/Book/ModifyComfirm" method="post" modelAttribute="bookSearchForm">
 			<p>编号：
 			<input type="text" name="id" readonly="readonly" value="${bookSearchForm.id}" /> 
 			<p>书名：
@@ -22,7 +22,7 @@
 			<input type="text" name="author" value="${bookSearchForm.author}" />
 			<p>价格：
 			<input type="text" name="price" value="${bookSearchForm.price}" />
-			<button type="">Update</button>
+			<button type="submit" >Update</button>
 		</form:form>
 	</div>
 	<div>

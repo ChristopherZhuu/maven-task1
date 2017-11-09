@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 import sun.launcher.resources.launcher;
 
+import com.dao.BookDao;
 import com.entity.Book;
 import com.form.BookSearchForm;
 import com.service.BookService;
@@ -42,13 +43,20 @@ public class BookController {
 
 	}
 
+	@RequestMapping("/ModifyComfirm")
+	public String ModifyComfirm(BookSearchForm bookSearchForm, Model model){
+		Book book = new Book();
+		BeanUtils.copyProperties(bookSearchForm, book);
+		bookService.updateBook(book);
+		return "Book/SearchBook";
+	}
+	
 	@RequestMapping("/modify/{id}")
 	public String ModifyBook(@PathVariable("id") int id, BookSearchForm bookSearchForm, Model model){
 		Book bookEntity = new Book();
 		List<Book> result = bookService.selectInfoById(id);
 		bookEntity = result.get(0);
 		BeanUtils.copyProperties(bookEntity, bookSearchForm);
-		//model.addAttribute("result", bookEntity);
 		return "Book/ModifyInput";
 	}
 	

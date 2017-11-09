@@ -11,4 +11,5 @@ public interface BookDao {
 	
 	public List<Book> selectInfoById(int id);
 	
+	public void updateBook(Book book);
 }
