@@ -41,6 +41,11 @@ public class BookImpl implements BookService{
 		bookDao.updateBook(book);
 		
 	}
+	@Override
+	public void insertBook(Book book) {
+		bookDao.insertBook(book);
+		
+	}
 
 	
 

@@ -30,4 +30,13 @@
 			price = #{price}
 		where id = #{id}
 	</update>
+	<insert id="insertBook"
+		parameterType="com.entity.Book">
+		insert into book
+		values
+		(#{id}, 
+		 #{bookName},
+		 #{author},
+		 #{price})
+	</insert>
 </mapper>

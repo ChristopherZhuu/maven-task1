@@ -11,4 +11,5 @@ public interface BookService {
 	public List<Book> selectInfoById(int id); 
 	public boolean deleteBookByPrimaryKey(int id);
 	public void updateBook(Book book);
+	public void insertBook(Book book);
 }

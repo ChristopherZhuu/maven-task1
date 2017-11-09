@@ -35,7 +35,9 @@ This is the result!
             </c:forEach>
         </table>    
     </div>
-   
+    <div>
+    	<a href="/maven_task1/Book/insert" ><button>Insert</button></a>
+    </div>
     <a href="../Book/Search">Return</a>
 </body>
 </html>

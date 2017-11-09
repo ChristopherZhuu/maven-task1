@@ -43,6 +43,19 @@ public class BookController {
 
 	}
 
+	@RequestMapping("/insert")
+	public String InsertBook(Model model){
+		return "Book/BookInsert";
+	}
+	
+	@RequestMapping("/InsertConfirm")
+	public String InsertConfirm(BookSearchForm bookSearchForm, Model model){
+		Book book = new Book();
+		BeanUtils.copyProperties(bookSearchForm, book);
+		bookService.insertBook(book);
+		return "Book/SearchBook";
+	}
+	
 	@RequestMapping("/ModifyComfirm")
 	public String ModifyComfirm(BookSearchForm bookSearchForm, Model model){
 		Book book = new Book();
