@@ -13,6 +13,13 @@ public class BookSearchForm implements Serializable{
 	private String author;
 	private int price;
 	private int id;
+	private int pageIndex;
+	public int getPageIndex() {
+		return pageIndex;
+	}
+	public void setPageIndex(int pageIndex) {
+		this.pageIndex = pageIndex;
+	}
 	public String getBookName() {
 		return bookName;
 	}

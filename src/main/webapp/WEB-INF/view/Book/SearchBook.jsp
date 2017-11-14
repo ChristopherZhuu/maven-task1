@@ -17,7 +17,7 @@ function loadXMLDoc()
 	var xmlhttp;
 	if (window.XMLHttpRequest)
 	{
-		// IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+		//  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
 		xmlhttp=new XMLHttpRequest();
 	}
 	else
@@ -32,11 +32,10 @@ function loadXMLDoc()
 			document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
 		}
 	}
-	xmlhttp.open("GET","/maven_task1/Book/test",true);
+	xmlhttp.open("GET","/maven_task1/Book/SearchResult",true);
 	xmlhttp.send();
 }
 </script>
-
 <title>Insert title here</title>
 
 </head>
@@ -47,7 +46,8 @@ function loadXMLDoc()
 			<p>Please input the name of the book: 
 			<input type="text" name="bookName" /> 
 			<!-- <input type="submit" value="Search" /> -->
-			<button type="submit">Search</button>
+			 <button type="submit" >Search</button>
+			
 		</form:form>
 	</div>
 	

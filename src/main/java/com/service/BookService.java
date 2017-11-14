@@ -12,4 +12,5 @@ public interface BookService {
 	public boolean deleteBookByPrimaryKey(int id);
 	public void updateBook(Book book);
 	public void insertBook(Book book);
+	public List<Book> selectInfoByPage(String bookName, int page);
 }

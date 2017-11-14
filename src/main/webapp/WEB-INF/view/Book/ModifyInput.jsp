@@ -26,7 +26,7 @@
 		</form:form>
 	</div>
 	<div>
-	<a href="../SearchResult">Return</a>
+	<a href="../Search">Return</a>
 	</div>
 	
 </body>
