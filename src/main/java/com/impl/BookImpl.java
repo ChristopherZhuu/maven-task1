@@ -64,8 +64,10 @@ public class BookImpl implements BookService {
 		}
 		if (books.size() % dist == 0) {
 			actualPage = books.size() / dist;
-		} else {
+		} else if(books.size() % dist != 0 && books.size()>dist){
 			actualPage = books.size() / dist + 1;
+		} else{
+			actualPage = 1;
 		}
 		List<Book> result = new ArrayList<Book>();
 		int initial = (page - 1) * dist;

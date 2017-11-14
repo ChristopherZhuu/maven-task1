@@ -84,79 +84,87 @@ public class BookController {
 		Book bookentity = new Book();
 		int dist = 5;
 		int pageCnt;
-		int curPage;
+		int curPage = 1;
 		BeanUtils.copyProperties(bookSearchForm, bookentity);
-		//List<Book> result = bookService.selectInfoByName(bookentity
-			//	.getBookName());
-		List<Book> result = bookService.selectInfoByPage(bookentity.getBookName(),1);
+		// List<Book> result = bookService.selectInfoByName(bookentity
+		// .getBookName());
+		List<Book> result = bookService.selectInfoByPage(
+				bookentity.getBookName(), 1);
 		List<Book> resultAll = bookService.getAllBook();
+		if (bookentity.getBookName() == "") {
+			result = resultAll;
+		}
 		int size = resultAll.size();
-		if(resultAll.size()%dist==0){
-			pageCnt = resultAll.size()/dist;
-		}else{
-			pageCnt = resultAll.size()/dist+1;
+		if (result.size() % dist == 0) {
+			pageCnt = resultAll.size() / dist;
+		} else if (result.size() % dist != 0 && result.size() > dist) {
+			pageCnt = resultAll.size() / dist + 1;
+		} else {
+			pageCnt = 1;
 		}
 		List<Page> pages = new ArrayList<Page>();
-		for(int i=0;i<pageCnt;i++){
-			pages.add(new Page(i+1));
+		for (int i = 0; i < pageCnt; i++) {
+			pages.add(new Page(i + 1));
 		}
 		curPage = bookSearchForm.getPageIndex();
-		if(curPage==0){
+		if (curPage == 0) {
 			curPage = 1;
-			result = bookService.selectInfoByPage(bookentity.getBookName(), curPage);
-		}else{
-			result = bookService.selectInfoByPage(bookentity.getBookName(), curPage);
+			result = bookService.selectInfoByPage(bookentity.getBookName(),
+					curPage);
+		} else {
+			result = bookService.selectInfoByPage(bookentity.getBookName(),
+					curPage);
 		}
 
-		
 		int pageIndex = bookSearchForm.getPageIndex();
 		model.addAttribute("selectByNameResult", result);
 		model.addAttribute("pageCnt", pageCnt);
 		model.addAttribute("pages", pages);
-		model.addAttribute("pageIndex", pageIndex);
+		model.addAttribute("curPage", curPage);
 		return "Book/SearchResult";
-	/*	if (result.size() == 0 && bookentity.getBookName() != "") {
-			return "Book/BookNotFoundError";
-		} else if (bookentity.getBookName() == "") {
-			//List<Book> allBooks = bookService.getAllBook();
-			List<Book> result = bookService.selectInfoByPage(bookentity.getBookName(), 1);
-			model.addAttribute("selectByNameResult", result);
-			return "Book/SearchResult";
-		} else {
-			model.addAttribute("selectByNameResult", result);
-			
-			
-			return "Book/SearchResult";
-		}*/
+		/*
+		 * if (result.size() == 0 && bookentity.getBookName() != "") { return
+		 * "Book/BookNotFoundError"; } else if (bookentity.getBookName() == "")
+		 * { //List<Book> allBooks = bookService.getAllBook(); List<Book> result
+		 * = bookService.selectInfoByPage(bookentity.getBookName(), 1);
+		 * model.addAttribute("selectByNameResult", result); return
+		 * "Book/SearchResult"; } else {
+		 * model.addAttribute("selectByNameResult", result);
+		 * 
+		 * 
+		 * return "Book/SearchResult"; }
+		 */
 	}
 
 	@RequestMapping("/SearchResult/{page}")
-	public String SearchPage(BookSearchForm bookSearchForm, @PathVariable("page") int page, Model model){
+	public String SearchPage(BookSearchForm bookSearchForm,
+			@PathVariable("page") int page, Model model) {
 		Book bookEntity = new Book();
 		int dist = 5;
 		int curPage;
-		int pageCnt=3;
+		int pageCnt = 3;
 		BeanUtils.copyProperties(bookSearchForm, bookEntity);
-		List<Book> result = bookService.selectInfoByPage(bookEntity.getBookName(), page);
+		List<Book> result = bookService.selectInfoByPage(
+				bookEntity.getBookName(), page);
 		List<Book> resultAll = bookService.getAllBook();
-		
-		if(resultAll.size()%dist==0){
-			pageCnt = resultAll.size()/dist;
-		}else{
-			pageCnt = resultAll.size()/dist+1;
+
+		if (resultAll.size() % dist == 0) {
+			pageCnt = resultAll.size() / dist;
+		} else {
+			pageCnt = resultAll.size() / dist + 1;
 		}
 		List<Page> pages = new ArrayList<Page>();
-		for(int i=0;i<pageCnt;i++){
-			pages.add(new Page(i+1));
+		for (int i = 0; i < pageCnt; i++) {
+			pages.add(new Page(i + 1));
 		}
-		curPage=page;
+		curPage = page;
 		model.addAttribute("selectByNameResult", result);
 		model.addAttribute("pageCnt", pageCnt);
 		model.addAttribute("pages", pages);
 		model.addAttribute("curPage", curPage);
 		return "Book/SearchResult";
 	}
-	
+
 	@RequestMapping("/test")
 	public String Testjsp(Model model) {
 		return "Book/test";
